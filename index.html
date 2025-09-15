@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my2Do</title>
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="img/todoLOGO.png" style="width: 80px;">
+            <h1>my2Do</h1>
+
+            <div class="search-container">
+                <input type="search" class="search-bar" placeholder="Search">
+                <i class='bxr  bx-search' style='color:#ffffff'></i>
+            </div>
+
+           <!-- <div class="settings-container">
+                <button class="settings">
+                    <img src="img/cogNew.png" alt="Settings" style="width: 30px; height: 30px;">
+                </button>
+            </div>-->
+        </div>
+    </header>
+
+    <div id="noteContainerBefore" class="takenoteBefore-container">
+        <button id="openNoteContainerBtn" class="openNoteContainer">Take a note...</button>
+        <h1>|</h1>
+        <button id="createListBtn" class="openNoteContainer">Create a list</button>
+    </div>
+
+    <div id="noteContainer" class="takenote-container hidden">
+        <input type="text" name="" id="titleInput" placeholder="Title" autocomplete="off">
+        <textarea class="auto-expand" id="noteInput" placeholder="Take a note..." rows="12" cols="50"></textarea>
+        <input type="submit" value="Add note" id="submitBtn">
+    </div>
+
+    <div id="listContainer" class="list-container hidden">
+        <input type="text" name="" id="listTitleInput" placeholder="Title" autocomplete="off" class="titleText">
+
+        <div id="itemsDiv" class="itemsDiv">
+            <input type="text" name="" id="itemList" placeholder="Add item" autocomplete="off">
+            <button id="addItemBtn" class="addItemBtn">+</button>
+        </div>
+
+        <input type="submit" value="Add list" id="addListBtn">
+    </div>
+
+    <div id="notesBox" class="storednotes-container">
+        <div id="note" class="noteBox">
+            <h3>Title</h3>
+            <p>Long long long longlonglong longlong long description
+                Long long long longlonglong longlong long description
+                Long long long longlonglong longlong long description
+                Long long long longlonglong longlong long description
+                Long long long longlonglong longlong long description
+                Long long long longlonglong longlong long description
+            </p>
+        </div>
+
+    </div>
+
+    <div id="openNote" class="openNote hidden">
+        <div id="openNoteContent"></div>
+        <div class="buttonsOpenNote">
+            <p id="infoList" style="opacity: 0.4;"></p>
+        <button id="deleteOpenNote" class="deleteNote">Delete</button>
+        <button id="closeOpenNote" class="closeNote">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

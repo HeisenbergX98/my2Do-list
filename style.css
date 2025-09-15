@@ -1,0 +1,416 @@
+body {
+  background: linear-gradient(90deg, rgb(26, 26, 26) 0%, rgb(0, 37, 42) 100%);
+  font-family: "Quicksand", sans-serif;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.header-container {
+  background-color: transparent;
+  display: flex;
+  border-bottom: 0.5px solid rgb(210, 255, 95);
+  align-items: center;
+  width: 100%;
+}
+.header-container h1 {
+  background: linear-gradient(90deg, rgb(25, 141, 148) 22%, rgb(147, 255, 97) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  cursor: default;
+  font-size: 25px;
+}
+.header-container .search-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  transform: translateX(-67px);
+}
+.header-container .search-container input {
+  background-color: transparent;
+  border-radius: 20px;
+  width: 35vh;
+  border: 1px solid rgb(210, 255, 95);
+  padding: 10px;
+  color: rgb(209, 209, 209);
+  outline: none;
+}
+.header-container .search-container i {
+  position: relative;
+  right: 30px;
+  top: 10px;
+}
+
+.settings-container .settings {
+  background: transparent;
+  margin: 0 auto;
+  cursor: pointer;
+  border: none;
+}
+.settings-container .settings:hover {
+  animation: spin360 0.5s linear;
+  transform-origin: center center;
+}
+
+@keyframes spin360 {
+  100% {
+    transform: rotate(90deg);
+  }
+}
+.takenoteBefore-container {
+  display: flex;
+  background: transparent;
+  width: 25%;
+  height: 5vh;
+  margin: 30px auto;
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 10px black;
+  border: 1px solid rgb(210, 255, 95);
+  color: rgb(209, 209, 209);
+}
+.takenoteBefore-container .openNoteContainer {
+  width: 50%;
+  height: 100%;
+  background: transparent;
+  color: rgb(209, 209, 209);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.takenoteBefore-container .openNoteContainer:hover {
+  color: rgb(209, 209, 209);
+  animation: moveTextLeft 0.2s forwards;
+}
+
+@keyframes moveTextLeft {
+  0% {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  100% {
+    font-weight: 1000;
+    font-size: 20px;
+  }
+}
+.takenote-container {
+  display: flex;
+  background-color: transparent;
+  width: 25%;
+  height: 30vh;
+  margin: 2% auto;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 1px 1px 10px black;
+  padding: 20px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgb(210, 255, 95);
+  border-radius: 30px;
+}
+.takenote-container input {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  background: transparent;
+}
+.takenote-container input[type=text] {
+  border: none;
+  font-weight: 600;
+  font-size: 20px;
+  box-sizing: border-box;
+  outline: none;
+  color: rgb(209, 209, 209);
+}
+.takenote-container input[type=submit] {
+  width: 30%;
+  margin: 0 auto;
+  background-color: transparent;
+  border: 1px solid rgb(210, 255, 95);
+  color: rgb(126, 126, 126);
+  cursor: pointer;
+  border-radius: 20px;
+}
+.takenote-container input[type=submit]:hover {
+  box-shadow: 1px 1px 10px rgb(154, 255, 92);
+  color: rgb(167, 167, 167);
+}
+.takenote-container input[type=submit]:active {
+  box-shadow: inset 1px 1px 10px black;
+}
+.takenote-container textarea {
+  background: transparent;
+  border: none;
+  color: rgb(187, 187, 187);
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+}
+
+.list-container {
+  display: flex;
+  background-color: transparent;
+  width: 25%;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 2% auto;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 1px 1px 10px black;
+  padding: 20px;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border: 1px solid rgb(210, 255, 95);
+  border-radius: 30px;
+}
+.list-container input {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  background: transparent;
+}
+.list-container .titleText {
+  width: 100% !important;
+  height: 40px !important;
+  border: none !important;
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  box-sizing: border-box !important;
+  outline: none !important;
+  color: rgb(209, 209, 209) !important;
+}
+.list-container input[type=text] {
+  border: none;
+  width: 50%;
+  height: 25px;
+  font-weight: 100;
+  font-size: 15px;
+  box-sizing: border-box;
+  outline: none;
+  color: rgb(209, 209, 209);
+  background: transparent;
+}
+.list-container input[type=submit] {
+  width: 30%;
+  padding: 7px;
+  margin: 0 auto;
+  background-color: transparent;
+  border: 1px solid rgb(210, 255, 95);
+  color: rgb(126, 126, 126);
+  cursor: pointer;
+  border-radius: 20px;
+}
+.list-container input[type=submit]:hover {
+  box-shadow: 1px 1px 10px rgb(154, 255, 92);
+  color: rgb(167, 167, 167);
+}
+.list-container input[type=submit]:active {
+  box-shadow: inset 1px 1px 10px black;
+}
+.list-container .itemsDiv .item {
+  color: rgb(209, 209, 209);
+}
+.list-container .itemsDiv .addItemBtn {
+  background: transparent;
+  border: 1px solid rgb(210, 255, 95);
+  color: white;
+  cursor: pointer;
+}
+.list-container .itemsDiv .addItemBtn:hover {
+  box-shadow: 0 0 5px rgb(154, 255, 92);
+}
+.list-container .itemsDiv .removeItemBtn {
+  background: transparent !important;
+  border: 1px solid rgb(202, 71, 71) !important;
+  color: white !important;
+  cursor: pointer !important;
+}
+.list-container .itemsDiv .removeItemBtn:hover {
+  box-shadow: 0 0 5px rgb(255, 100, 92);
+}
+
+.storednotes-container {
+  display: flex;
+  background-color: transparent;
+  max-width: 73%;
+  margin: 0 auto;
+  flex-direction: row;
+  gap: 20px;
+  padding-top: 30px;
+  flex-wrap: wrap;
+}
+.storednotes-container .noteBox {
+  border: 1px solid rgb(210, 255, 95);
+  width: 26vh;
+  max-height: 25vh;
+  border-radius: 30px;
+  color: rgb(209, 209, 209);
+  box-shadow: 1px 1px 10px rgb(57, 57, 57);
+  overflow-y: auto;
+  word-break: break-word;
+}
+.storednotes-container .noteBox h3 {
+  padding: 5px 15px;
+}
+.storednotes-container .noteBox p {
+  padding: 1px 15px;
+}
+.storednotes-container .noteBox:hover {
+  animation: liftNote 0.3s forwards;
+  box-shadow: 1px 1px 10px rgb(148, 148, 148);
+  cursor: pointer;
+}
+
+@keyframes liftNote {
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.noteBox::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+.noteBox::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+  margin: 2px;
+}
+
+.noteBox::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 8px;
+}
+
+.openNote {
+  position: fixed !important;
+  width: 30% !important;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 9999 !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+          backdrop-filter: blur(10px) !important;
+  background: transparent !important;
+  box-shadow: 0 4px 32px rgba(151, 151, 151, 0.2) !important;
+  border-radius: 20px !important;
+  padding: 15px !important;
+  border: 1px solid rgb(210, 255, 95) !important;
+  color: rgb(209, 209, 209) !important;
+}
+
+.openNoteTextarea {
+  background: transparent;
+  width: 100%;
+  height: 50%;
+  border: none;
+  color: rgb(187, 187, 187);
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+}
+
+.buttonsOpenNote {
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+  justify-content: right;
+  align-items: center;
+}
+.buttonsOpenNote .deleteNote {
+  background: transparent;
+  color: red;
+  border: 1px solid red;
+  cursor: pointer;
+  padding: 5px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.buttonsOpenNote .deleteNote:hover {
+  box-shadow: 1px 2px 10px rgba(255, 36, 36, 0.8);
+}
+.buttonsOpenNote .deleteNote:active {
+  box-shadow: inset 1px 2px 10px rgba(0, 0, 0, 0.8);
+}
+.buttonsOpenNote .closeNote {
+  background: transparent;
+  color: rgb(210, 255, 95);
+  border: 1px solid rgb(210, 255, 95);
+  cursor: pointer;
+  padding: 5px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.buttonsOpenNote .closeNote:hover {
+  box-shadow: 1px 2px 10px rgba(137, 137, 137, 0.8);
+}
+.buttonsOpenNote .closeNote:active {
+  box-shadow: inset 1px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.crossed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  .header-container h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: 1px;
+  }
+  .header-container .search-container {
+    width: 100%;
+    transform: none;
+    margin-bottom: 15px;
+  }
+  .header-container .search-container input {
+    width: 100%;
+    font-size: 14px;
+  }
+  .header-container .search-container i {
+    right: 30px;
+    top: 11px;
+  }
+  .takenoteBefore-container,
+  .takenote-container,
+  .list-container {
+    width: 90%;
+    margin: 15px auto;
+  }
+  .list-container input[type=text] {
+    width: 80%;
+  }
+  .storednotes-container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    padding-top: 20px;
+    gap: 15px;
+  }
+  .storednotes-container .noteBox {
+    width: 50%;
+    max-height: 20vh;
+  }
+  .openNote {
+    width: 60% !important;
+  }
+  .buttonsOpenNote {
+    justify-content: center;
+  }
+}/*# sourceMappingURL=style.css.map */
