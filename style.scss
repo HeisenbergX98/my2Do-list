@@ -329,8 +329,8 @@ body {
 
 .noteBox::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 8px; // rounded thumb
-    margin: 2px; // space from top/bottom
+    border-radius: 8px;
+    margin: 2px;
 }
 
 .noteBox::-webkit-scrollbar-track {
@@ -347,7 +347,7 @@ body {
     transform: translate(-50%, -50%) !important;
     z-index: 9999 !important;
     backdrop-filter: blur(10px) !important;
-    background: transparent !important; // or your preferred background
+    background: transparent !important;
     box-shadow: 0 4px 32px rgba(151, 151, 151, 0.2) !important;
     border-radius: 20px !important;
     padding: 15px !important;

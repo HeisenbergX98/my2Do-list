@@ -46,10 +46,10 @@ function addNote() {
 
     newNote.classList.add("noteBox");
 
-    titleHeading.innerHTML = titleInput.value.replace(/\n/g, "<br>");
-    noteHeading.innerHTML = noteInput.value.replace(/\n/g, "<br>");
+    titleHeading.innerHTML = safeTextWithBreaks(titleInput.value);
+    noteHeading.innerHTML = safeTextWithBreaks(noteInput.value);
 
-    if (titleHeading.innerHTML === "" && noteHeading.innerHTML === "") {
+    if (titleHeading.textContent === "" && noteHeading.textContent === "") {
         return
     } else {
         newNote.appendChild(titleHeading);
@@ -75,10 +75,10 @@ function addItemToList() {
     removeBtn.classList.add("removeItemBtn");
 
     let itemAdded = document.createElement("p");
-    itemAdded.innerHTML = itemList.value;
+    itemAdded.innerHTML = safeTextWithBreaks(itemList.value);
     itemAdded.classList.add("item");
 
-    if (itemAdded.innerHTML === "") {
+    if (itemAdded.textContent === "") {
         return;
     } else {
         itemContainer.appendChild(itemAdded);
@@ -93,6 +93,10 @@ function addItemToList() {
     });
 }
 
+function safeTextWithBreaks(text) {
+    return text.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br>");
+}
+
 onClick(addListBtn, function () {
     const titleInput = document.getElementById("listTitleInput");
     const itemsDiv = document.getElementById("itemsDiv");
@@ -101,7 +105,7 @@ onClick(addListBtn, function () {
     newNote.classList.add("noteBox");
 
     let titleHeading = document.createElement("h3");
-    titleHeading.innerHTML = titleInput.value.replace(/\n/g, "<br>");
+    titleHeading.innerHTML = safeTextWithBreaks(titleInput.value);
     newNote.appendChild(titleHeading);
 
     let items = itemsDiv.querySelectorAll(".item");
@@ -109,7 +113,7 @@ onClick(addListBtn, function () {
         let ul = document.createElement("ul");
         items.forEach(item => {
             let li = document.createElement("li");
-            li.innerHTML = item.innerHTML;
+            li.innerHTML = safeTextWithBreaks(item.textContent);
             ul.appendChild(li);
         });
         newNote.appendChild(ul);
@@ -176,10 +180,12 @@ onClick(notesBox, function (event) {
     const infoList = document.getElementById("infoList");
     if (note) {
         currentNote = note;
-        openNoteContent.innerHTML = note.innerHTML;
+        openNoteContent.innerHTML = note.innerHTML; // Use original HTML to preserve <ul>
         openNote.classList.remove("hidden");
-        if (openNoteContent.querySelector("ul")) {
+        if (note.querySelector("ul")) {
             infoList.textContent = "Click any item to mark it as completed";
+        } else {
+            infoList.textContent = "";
         }
         openNoteContent.querySelectorAll("li").forEach(li => {
             li.addEventListener("click", function () {
@@ -211,7 +217,7 @@ searchInput.addEventListener('input', function () {
     const query = searchInput.value.toLowerCase();
     const notes = notesBox.querySelectorAll('.noteBox');
     notes.forEach(note => {
-        const text = note.innerText.toLowerCase();
+        const text = note.textContent.toLowerCase();
         if (text.includes(query)) {
             note.style.display = '';
         } else {
@@ -219,3 +225,9 @@ searchInput.addEventListener('input', function () {
         }
     });
 });
+
+
+
+titleHeading.innerHTML = safeTextWithBreaks(titleInput.value);
+noteHeading.innerHTML = safeTextWithBreaks(noteInput.value);
+li.innerHTML = safeTextWithBreaks(item.textContent);
