@@ -225,9 +225,3 @@ searchInput.addEventListener('input', function () {
         }
     });
 });
-
-
-
-titleHeading.innerHTML = safeTextWithBreaks(titleInput.value);
-noteHeading.innerHTML = safeTextWithBreaks(noteInput.value);
-li.innerHTML = safeTextWithBreaks(item.textContent);
